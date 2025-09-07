@@ -17,6 +17,7 @@ jobs:
 
       - name:  esp-idf build
         # This action installs the ESP‑IDF tools and sets up the environment.
+        target: esp32s3
         uses: espressif/esp-idf-ci-action@v1
         with:
           # You can pin a specific version or use 'latest'
