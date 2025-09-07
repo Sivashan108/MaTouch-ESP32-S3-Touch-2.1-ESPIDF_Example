@@ -28,4 +28,4 @@ jobs:
           target: esp32s3
           # Command to run; idf.py build builds the default project in the repo root
           command: idf.py build
-          path: main
+          path: .
