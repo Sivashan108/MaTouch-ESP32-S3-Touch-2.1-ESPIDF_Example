@@ -15,7 +15,8 @@ jobs:
       # Check out the repository
       - name: Checkout repository
         uses: actions/checkout@v3
-
+        with:
+          submodules: 'recursive'
       # Install ESP‑IDF and build the project
       - name: Build with ESP‑IDF
       # This action handles tool installation and executes the build command
