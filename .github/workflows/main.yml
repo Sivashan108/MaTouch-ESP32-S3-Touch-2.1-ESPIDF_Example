@@ -1,0 +1,28 @@
+# .github/workflows/esp-idf-build.yml
+name: ESP‑IDF Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up ESP‑IDF
+        # This action installs the ESP‑IDF tools and sets up the environment.
+        uses: espressif/idf-action@v1
+        with:
+          # You can pin a specific version or use 'latest'
+          esp_idf_version:  'v5.1.1'
+
+      - name: Build the project
+        run: |
+          # If your project is in a subdirectory, cd into it
+          idf.py build
