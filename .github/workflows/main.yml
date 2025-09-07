@@ -25,7 +25,7 @@ jobs:
         uses: espressif/esp-idf-ci-action@v1
         with:
           # Pin ESP‑IDF version (use quotes for version strings)
-          esp_idf_version: 'v5.1.1'
+          esp_idf_version: 'v5.3.1'
           # Choose the chip you’re building for (e.g. esp32, esp32s2, esp32s3, etc.)
           target: esp32s3
           # Command to run; idf.py build builds the default project in the repo root
