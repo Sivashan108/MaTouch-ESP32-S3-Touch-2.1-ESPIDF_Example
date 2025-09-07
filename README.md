@@ -177,9 +177,6 @@ Porting the Arduino examples to ESP‑IDF involved several key changes:
 
 These changes mean you can integrate the display into more complex ESP‑IDF applications, using multiple tasks, Wi‑Fi or Bluetooth connectivity, and advanced peripherals.
 
-## Contributing
-
-Contributions are welcome!  If you add features (e.g. LVGL integration, additional demos), please open a pull request and describe your changes.  Feel free to open issues for bug reports or enhancement ideas.
 
 ## License
 
