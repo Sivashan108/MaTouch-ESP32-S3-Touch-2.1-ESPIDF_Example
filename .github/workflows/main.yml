@@ -1,3 +1,4 @@
+# .github/workflows/esp-idf-build.yml
 name: ESP‑IDF Build
 
 on:
@@ -9,17 +10,21 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
+      # Check out the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up ESP‑IDF
-        uses: espressif/idf-action@v1
+      # Install ESP‑IDF and build the project
+      - name: Build with ESP‑IDF
+      # This action handles tool installation and executes the build command
+        uses: espressif/esp-idf-ci-action@v1
         with:
-          esp_idf_version: v5.1.1
-
-      - name: Set target chip
-        run: idf.py set-target esp32s3
-
-      - name: Build the project
-        run: idf.py build
+          # Pin ESP‑IDF version (use quotes for version strings)
+          esp_idf_version: 'v5.1.1'
+          # Choose the chip you’re building for (e.g. esp32, esp32s2, esp32s3, etc.)
+          target: esp32s3
+          # Command to run; idf.py build builds the default project in the repo root
+          command: idf.py build
+          path: main
