@@ -18,6 +18,8 @@ jobs:
         with:
           submodules: 'recursive'
       # Install ESP‑IDF and build the project
+      - name: Remove invalid lock file
+        run: rm -f dependencies.lock
       - name: Build with ESP‑IDF
       # This action handles tool installation and executes the build command
         uses: espressif/esp-idf-ci-action@v1
